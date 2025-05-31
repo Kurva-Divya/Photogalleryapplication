@@ -1,0 +1,33 @@
+.divya {
+  background-color: #8fb887; /* Dark background */
+  min-height: 100vh; /* Ensure it covers the full viewport height */
+  align-items: center;
+}
+.container {
+    text-align: center;
+    padding: 20px;
+    
+  }
+  
+  .heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* ✅ Exactly 5 images per row */
+    gap: 15px;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  .image-grid img {
+    width: 350%;
+    max-width: 200px; /* ✅ Uniform image size */
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  

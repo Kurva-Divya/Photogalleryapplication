@@ -1,0 +1,24 @@
+<header>
+  <!-- App Logo (Left Side) -->
+  <div class="logo" style="display: flex; align-items: center;">
+    <img src="assets/logo.jpeg" alt="SnapVault Logo" style="height: 40px; margin-right: 10px;">
+    <span class="snapvault-text">SnapVault</span>
+  </div>
+
+  <!-- Mode Dropdown + Logout Button (Right Side) -->
+  <div class="header-controls" style="display: flex; align-items: center;">
+    <!-- Theme Dropdown -->
+    <div class="theme-selector" style="margin-right: 15px;">
+      <label for="theme-dropdown">Mode:</label>
+      <select id="theme-dropdown" (change)="onThemeChange($event)">
+        <option value="light">Light Mode</option>
+        <option value="dark">Dark Mode</option>
+      </select>
+    </div>
+
+    <!-- Logout Button -->
+    <button (click)="onLogout()" class="logout-btn" style="background-color: red; color: white; border: none; padding: 5px 10px; cursor: pointer;">
+      Logout
+    </button>
+  </div>
+</header>

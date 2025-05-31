@@ -1,0 +1,29 @@
+<app-header></app-header>
+
+<div class="container">
+  <div class="card">
+    <div class="profile-icon">
+      <img src="assets/logo5.webp" alt="User Icon">
+    </div>
+    <h2>CREATE ACCOUNT</h2>
+    <form (ngSubmit)="createAccount()">
+      <input type="text" placeholder="Full Name" [(ngModel)]="username" name="username" required>
+      <input type="password" placeholder="Password" [(ngModel)]="password" name="password" required (input)="validatePassword()">
+      
+      <div *ngIf="passwordError" class="error">
+        Password must contain at least 4 letters, 3 digits, and 1 special character.
+      </div>
+
+      <button type="submit" class="create-btn">CREATE ACCOUNT</button>
+    </form>
+    <p>Already a member? <a (click)="backToLogin()" class="login-link">LOGIN</a></p>
+  </div>
+</div>
+
+<!-- Popup Modal -->
+<div class="popup" *ngIf="showPopup">
+  <div class="popup-content">
+    <p>✅ Account created successfully  <b>{{ createdUsername }}</b></p>
+    <button class="ok-btn" (click)="closePopup()">OK</button>
+  </div>
+</div>

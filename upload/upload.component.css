@@ -1,0 +1,77 @@
+.upload-section {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.upload-section h2 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.upload-section label {
+  font-weight: bold;
+  display: block;
+  margin: 10px 0 5px;
+  color: #555;
+}
+
+.upload-section select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #f8f8f8;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.upload-section select:focus {
+  border-color: #007bff;
+  background: #fff;
+}
+
+.upload-section input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #f8f8f8;
+  cursor: pointer;
+  font-size: 14px;
+  outline: none;
+  margin: 10px 0;
+}
+
+.upload-section p {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.upload-section button {
+  background: linear-gradient(45deg, #007bff, #00d4ff);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.upload-section button:hover {
+  background: linear-gradient(45deg, #0056b3, #0088cc);
+}
+
+.upload-section button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}

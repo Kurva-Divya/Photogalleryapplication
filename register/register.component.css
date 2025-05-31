@@ -1,0 +1,254 @@
+/* Main Page Layout */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 130vh; /* Reduced height */
+  padding: 10px;
+  margin-right: 10px;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Prevents scrolling on the entire page */
+body, html {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Slideshow Positioned Below Header */
+.slideshow-container {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: 137vh; /* Reduced height */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: black;
+}
+
+/* Sliding Wrapper */
+.slides {
+  display: flex;
+  width: 200%;
+  animation: slideRight 10s linear infinite;
+}
+
+/* Individual Slide */
+.slide {
+  flex: 0 0 100vw;
+  height: 100%;
+}
+
+/* Images - Fully Visible Without Cropping */
+.slide img {
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Keyframes for Continuous Left-to-Right Movement */
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* Slideshow Container */
+.slideshow-track {
+  display: flex;
+  animation: slideRight 10s linear infinite;
+}
+
+.slideshow-track img {
+  width: 100%; 
+  height: auto;
+}
+
+
+/* Registration Form on the Right Side */
+.register-container {
+  background: #0bbbde;
+  border-radius: 15px; /* Smooth rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 50px;
+  max-width: 390px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  margin-left: auto;
+  margin-right: 20px;
+  margin-top: 23px; /* Adjusted for better positioning */
+  overflow: hidden; /* Prevents internal scrolling */
+}
+
+/* Ensures no unnecessary scrolling inside form */
+.register-container form {
+  max-height: 100%;
+  overflow: hidden; /* Hides scrollbars */
+}
+
+/* Input Groups - Ensuring Full Visibility of Labels and Inputs */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.input-group label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+  white-space: nowrap; /* Prevents label text from breaking */
+  overflow: hidden; /* Ensures labels do not overflow */
+  text-overflow: ellipsis; /* Adds '...' if label text overflows */
+  display: inline-block; /* Helps maintain proper spacing */
+  max-width: 100%; /* Prevents labels from going out of bounds */
+}
+
+/* Ensuring Input Fields Are Fully Visible */
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 12px; /* Increased padding for better visibility */
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  box-sizing: border-box; /* Prevents input fields from overflowing */
+}
+
+
+
+
+/* Required Fields */
+.required {
+  color: red;
+}
+
+/* Error Styling */
+.error input,
+.error select {
+  border: 1px solid red;
+}
+
+.error-icon {
+  color: red;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+small {
+  color: red;
+  display: block;
+  margin-top: 5px;
+}
+
+/* Checkbox Styles */
+.terms-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.terms-container label {
+  font-size: 14px;
+  color: #333;
+}
+
+.terms-container input {
+  margin-right: 5px;
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.button-group button {
+  width: 48%;
+  padding: 10px;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-group button[type="submit"] {
+  background: #ff2e92;
+  color: white;
+}
+
+.button-group button[type="submit"]:hover {
+  background: #e0006c;
+}
+
+.button-group button[type="button"] {
+  background: #ccc;
+  color: black;
+}
+
+.button-group button[type="button"]:hover {
+  background: #999;
+}
+
+/* Remove Bottom Scrollbar and Reduce Scrollbar Height */
+::-webkit-scrollbar {
+  width: 8px; /* Reduce scrollbar width */
+  height: 4px; /* Reduce scrollbar height */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .slideshow-container {
+    width: 50vw;
+  }
+
+  .register-container {
+    max-width: 400px;
+    padding: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+  }
+
+  .register-container {
+    width: 90%;
+    max-width: 350px;
+    margin-top: 20px;
+  }
+}

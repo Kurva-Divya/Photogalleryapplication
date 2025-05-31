@@ -1,0 +1,242 @@
+/* Full Page Background */
+.login-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #d8a6e7, #a0c4ff);
+  padding: 20px;
+}
+
+/* Options Buttons */
+.options button {
+  background: none;
+  border: none;
+  color: #fafcfc; /* Button text color */
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.options button:hover {
+  text-decoration: underline; /* Underline on hover */
+  color: #0d47a1; /* Darker color on hover */
+}
+
+/* Add space between Admin and User containers */
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 950px;
+  background: rgb(174, 222, 236);
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 30px; /* Added space between both containers */
+}
+
+/* Admin & User Containers */
+.admin-container,
+.user-container {
+  width: 48%; /* Adjusted width to add space between sections */
+  padding: 25px;
+  text-align: center;
+}
+
+/* Left Side - Admin */
+.admin-container {
+  background: linear-gradient(to bottom, #f3e5f5, #e1bee7);
+  border-radius: 15px;
+}
+
+/* Right Side - User */
+.user-container {
+  background: linear-gradient(to bottom, #e3f2fd, #90caf9);
+  border-radius: 15px;
+}
+
+/* Heading */
+h2 {
+  font-size: 26px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Input Fields */
+.input-group {
+  margin-bottom: 15px;
+  position: relative;
+  text-align: left;
+}
+
+.input-group label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+/* Icons */
+.input-group label .icon {
+  font-size: 28px;
+  margin-right: 8px;
+  color: #555;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-bottom: 2px solid #555;
+  font-size: 16px;
+  outline: none;
+  background: transparent;
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+  border-bottom: 2px solid #283593;
+}
+
+/* Remember Me & Forgot Password */
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.remember-forgot a {
+  color: #1565c0;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.remember-forgot a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+.login-btn {
+  width: 40%;
+  padding: 12px;
+  background: #283593;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s, transform 0.2s ease-in-out;
+}
+
+.login-btn:hover {
+  background: #1a237e;
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Admin Login Button Hover Effect */
+.admin-container .login-btn {
+  background: #8e24aa; /* Purple */
+}
+
+.admin-container .login-btn:hover {
+  background: #6a1b9a;
+  transform: scale(1.05);
+}
+
+/* User Login Button Hover Effect */
+.user-container .login-btn {
+  background: #1565c0; /* Blue */
+}
+
+.user-container .login-btn:hover {
+  background: #0d47a1;
+  transform: scale(1.05);
+}
+
+/* Error Message */
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+  }
+  .admin-container, .user-container {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+/* Password Input with Eye Icon */
+.password-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.password-wrapper input {
+  flex: 1;
+  padding-right: 35px;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+/* Pop-up Modal */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 300px;
+}
+
+.popup-content p {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.popup-content button {
+  background: #283593;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.popup-content button:hover {
+  background: #1a237e;
+}

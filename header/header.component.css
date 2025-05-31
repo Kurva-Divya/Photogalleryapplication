@@ -1,0 +1,95 @@
+.logo {
+  display: flex;
+  align-items: center;
+  animation: logoSlideIn 1.5s ease-out, glowEffect 3s infinite alternate;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.snapvault-text {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffffff; /* Ensuring clear visibility */
+  letter-spacing: 2px; /* Spacing for a premium look */
+  text-transform: uppercase;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 
+               0 0 30px rgba(255, 255, 255, 0.7);
+  animation: fadeInScale 1.2s ease-in-out, neonGlow 2s infinite alternate;
+  transition: color 0.4s ease-in-out, transform 0.3s ease-in-out;
+}
+
+
+
+/* Neon Glow Effect */
+@keyframes neonGlow {
+  0% {
+    color: #68b090; /* Bright Yellow */
+    text-shadow: 0 0 10px rgba(255, 234, 0, 0.9),
+                 0 0 20px rgba(149, 192, 219, 0.7),
+                 0 0 30px rgba(255, 234, 0, 0.5);
+  }
+  100% {
+    color: #100f10; /* Pinkish Glow */
+    text-shadow: 0 0 15px rgba(17, 17, 17, 0.9),
+                
+  }
+}
+
+
+
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .logo img {
+    height: 40px;        /* Fixed height */
+    width: auto;         /* Maintains aspect ratio */
+    object-fit: contain; /* Ensures no distortion */
+    border-radius: 50px;  /* 🔄 Rounds the corners (increase value for more rounding) */
+    display: block;      /* Removes gaps below the image */
+  }
+  
+  
+  .theme-selector {
+    display: flex;
+    align-items: center;
+  }
+  
+  .theme-selector label {
+    margin-right: 8px;
+  }
+  
+  select {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    background-color: var(--button-bg);
+    color: var(--button-text);
+  }
+  .logout-btn {
+    background-color: #ff4d4d; /* Red color */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .logout-btn:hover {
+    background-color: #cc0000; /* Darker red on hover */
+  }
+  
+  .logout-btn:active {
+    background-color: #a80000; /* Even darker red on click */
+  }
+  

@@ -1,0 +1,14 @@
+<div class="upload-section">
+  <h2>Admin Upload Page</h2>
+
+  <label>Select Category:</label>
+  <select [(ngModel)]="selectedCategory">
+    <option value="" disabled>Select a category</option>
+    <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+  </select>
+
+  <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+  <p *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</p>
+
+  <button (click)="uploadImage()" [disabled]="!!errorMessage">Upload</button>
+</div>

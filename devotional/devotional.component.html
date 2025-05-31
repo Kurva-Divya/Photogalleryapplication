@@ -1,0 +1,40 @@
+<app-header></app-header>
+
+<div class="divya">
+  <div class="container">
+    <h1 class="heading">Devotional</h1>
+
+    <div class="content-wrapper">
+      <!-- Left Arrow for Previous Image -->
+      <span class="arrow left-arrow" (click)="prevImage()">&#9664;</span>
+
+      <!-- Main Image Display -->
+      <div class="image-display">
+        <img [src]="getAllImages()[currentImageIndex]" alt="Devotional Image">
+
+        <!-- Rating Section -->
+        <div class="star-rating">
+          <span *ngFor="let star of [1, 2, 3, 4, 5]" 
+                (click)="setRating(currentImageIndex, star)" 
+                [ngClass]="{'filled': star <= ratings[currentImageIndex], 'unfilled': star > ratings[currentImageIndex]}">
+            ★
+          </span>
+        </div>
+
+        <!-- Comment Input Section -->
+        <div>
+          <textarea [(ngModel)]="currentComments[currentImageIndex]" placeholder="Add a comment..."></textarea>
+          <button (click)="submitComment(currentImageIndex)">Send</button>
+        </div>
+
+        <!-- Display Comments -->
+        <div *ngIf="comments[currentImageIndex]?.length">
+          <p *ngFor="let comment of comments[currentImageIndex]"><strong>Comment:</strong> {{ comment }}</p>
+        </div>
+      </div>
+
+      <!-- Right Arrow for Next Image -->
+      <span class="arrow right-arrow" (click)="nextImage()">&#9654;</span>
+    </div>
+  </div>
+</div>

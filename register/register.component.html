@@ -1,0 +1,107 @@
+<app-header></app-header>
+
+<div class="container">
+  <!-- Full-Screen Slideshow -->
+  <div class="slideshow-container">
+    <div class="slides">
+      <div *ngFor="let image of slideshowImages" class="slide">
+        <img [src]="image" alt="Slideshow Image">
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- Right side: Registration Form -->
+  <div class="register-container">
+    <h2>Register for SnapVault</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onRegister()" novalidate>
+
+      <div class="input-group" [ngClass]="{'error': isFieldInvalid('username')}">
+        <label>Username: <span class="required">*</span></label>
+        <input type="text" formControlName="username" required />
+        <span class="error-icon" *ngIf="isFieldInvalid('username')">!</span>
+        <small *ngIf="isFieldInvalid('username')">Please fill out this field.</small>
+      </div>
+
+      
+
+      <div class="input-group">
+        <label>Phone Number:</label>
+        <input type="text" formControlName="phone" />
+      </div>
+
+      <div class="input-group" [ngClass]="{'error': isFieldInvalid('dob')}">
+        <label>Date of Birth: <span class="required">*</span></label>
+        <input type="date" formControlName="dob" required />
+        <span class="error-icon" *ngIf="isFieldInvalid('dob')">!</span>
+        <small *ngIf="isFieldInvalid('dob')">Please fill out this field.</small>
+      </div>
+
+      <div class="input-group" [ngClass]="{'error': isFieldInvalid('gender')}">
+        <label>Gender: <span class="required">*</span></label>
+        <select formControlName="gender" required>
+          <option value="" disabled selected>Select Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+        <span class="error-icon" *ngIf="isFieldInvalid('gender')">!</span>
+        <small *ngIf="isFieldInvalid('gender')">Please fill out this field.</small>
+      </div>
+
+      <div class="input-group" [ngClass]="{'error': isFieldInvalid('ageGroup')}">
+        <label>Age Group: <span class="required">*</span></label>
+        <select formControlName="ageGroup" required>
+          <option value="" disabled selected>Select Age Group</option>
+          <option value="Child">Child</option>
+          <option value="Adult">Adult</option>
+          <option value="Older">Older</option>
+        </select>
+        <span class="error-icon" *ngIf="isFieldInvalid('ageGroup')">!</span>
+        <small *ngIf="isFieldInvalid('ageGroup')">Please fill out this field.</small>
+      </div>
+
+      <div class="input-group" [ngClass]="{'error': isFieldInvalid('photoType')}">
+        <label>Select Photo Category: <span class="required">*</span></label>
+        <select formControlName="photoType" required>
+          <option value="" disabled selected>Select Photo Category</option>
+          <option *ngFor="let type of photoCategories" [value]="type.name">{{ type.name }}</option>
+        </select>
+        <span class="error-icon" *ngIf="isFieldInvalid('photoType')">!</span>
+        <small *ngIf="isFieldInvalid('photoType')">Please fill out this field.</small>
+      </div>
+
+      <div class="input-group" [ngClass]="{'error': isFieldInvalid('securityQuestion')}">
+        <label>Security Question: <span class="required">*</span></label>
+        <select formControlName="securityQuestion" required>
+          <option value="" disabled selected>Select a Security Question</option>
+          <option value="pet">What is your first pet's name?</option>
+          <option value="city">Which city were you born in?</option>
+          <option value="school">What was the name of your first school?</option>
+        </select>
+        <span class="error-icon" *ngIf="isFieldInvalid('securityQuestion')">!</span>
+        <small *ngIf="isFieldInvalid('securityQuestion')">Please fill out this field.</small>
+      </div>
+
+      <div class="input-group" [ngClass]="{'error': isFieldInvalid('securityAnswer')}">
+        <label>Security Answer: <span class="required">*</span></label>
+        <input type="text" formControlName="securityAnswer" required />
+        <span class="error-icon" *ngIf="isFieldInvalid('securityAnswer')">!</span>
+        <small *ngIf="isFieldInvalid('securityAnswer')">Please fill out this field.</small>
+      </div>
+
+      <div class="terms-container">
+        <input type="checkbox" formControlName="acceptTerms" id="termsCheckbox" required />
+        <label for="termsCheckbox">I agree to the Terms & Conditions <span class="required">*</span></label>
+        <span class="error-icon" *ngIf="isFieldInvalid('acceptTerms')">!</span>
+        <small *ngIf="isFieldInvalid('acceptTerms')">You must accept the Terms & Conditions</small>
+      </div>
+
+      <div class="button-group">
+        <button type="submit" [disabled]="registerForm.invalid">Register</button>
+        <button type="button" (click)="navigateToLogin()">Cancel</button>
+      </div>
+
+    </form>
+  </div>
+</div>

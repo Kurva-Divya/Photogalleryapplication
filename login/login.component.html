@@ -1,0 +1,79 @@
+<app-header></app-header>
+<div class="login-wrapper">
+  <div class="container">
+    <!-- Admin Login Section -->
+    <div class="admin-container">
+      <h2>Admin Login</h2>
+      <form [formGroup]="adminForm" (ngSubmit)="onAdminLogin()">
+        <div class="input-group">
+          <label for="adminEmail">
+            <span class="icon">✉️</span> Admin Email:
+          </label>
+          <input type="email" id="adminEmail" formControlName="adminEmail" required />
+          <div *ngIf="adminForm.controls['adminEmail'].invalid && adminForm.controls['adminEmail'].touched" class="error-message">
+            Valid email is required
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="adminPassword">
+            <span class="icon">🔒</span> Admin Password:
+          </label>
+          <input type="password" id="adminPassword" formControlName="adminPassword" required />
+          <div *ngIf="adminForm.controls['adminPassword'].invalid && adminForm.controls['adminPassword'].touched" class="error-message">
+            Password is required
+          </div>
+        </div>
+
+        <button type="submit" [disabled]="adminForm.invalid" class="login-btn">Login as Admin</button>
+        <p *ngIf="adminErrorMessage" class="error-message">{{ adminErrorMessage }}</p>
+      </form>
+    </div>
+
+    <!-- User Login Section -->
+    <div class="user-container">
+      <h2>User Login</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="input-group">
+          <label for="username">
+            <span class="icon">👤</span> Username:
+          </label>
+          <input type="text" id="username" formControlName="username" required />
+          <div *ngIf="loginForm.controls['username'].invalid && loginForm.controls['username'].touched" class="error-message">
+            Username is required
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="password">
+            <span class="icon">🔒</span> Password:
+          </label>
+          <div class="password-wrapper">
+            <input [type]="showPassword ? 'text' : 'password'" id="password" formControlName="password" required />
+            <span class="eye-icon" (click)="togglePasswordVisibility()">
+              {{ showPassword ? '👁️' : '👁️‍🗨️' }}
+            </span>
+          </div>
+          <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched" class="error-message">
+            Password is required
+          </div>
+        </div>
+
+        <button type="submit" class="login-btn">Login</button>
+        <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+      </form>
+
+      <div class="options">
+        <button (click)="navigateToCreateAccount()">Create New Account</button>
+      </div>
+      <!-- Pop-up Message -->
+<div class="popup" *ngIf="isPopupVisible">
+  <div class="popup-content">
+    <p>{{ popupMessage }}</p>
+    <button (click)="closePopup()">OK</button>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
