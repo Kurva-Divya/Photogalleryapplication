@@ -1,0 +1,30 @@
+/* Light Theme */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --button-bg: #007bff;
+    --button-text: #ffffff;
+    --border-color: #cccccc;
+  }
+  
+  /* Dark Theme */
+  [data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --button-bg: #bb86fc;
+    --button-text: #000000;
+    --border-color: #444444;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  button, select {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
